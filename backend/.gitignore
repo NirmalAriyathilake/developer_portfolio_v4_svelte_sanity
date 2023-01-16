@@ -25,5 +25,5 @@
 # Typescript
 *.tsbuildinfo
 
-# local env files
+# Local env files
 .env*.local
