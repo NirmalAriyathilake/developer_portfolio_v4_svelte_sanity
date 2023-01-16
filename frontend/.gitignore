@@ -1,0 +1,19 @@
+# Misc
+.DS_Store
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Svelte 
+/build
+/.svelte-kit
+/package
+
+# Local env files
+.env*.local
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
