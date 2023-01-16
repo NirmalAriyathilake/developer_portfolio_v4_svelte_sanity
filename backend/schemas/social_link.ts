@@ -13,5 +13,10 @@ export default {
       type: 'string',
       title: 'URL',
     },
+    {
+      name: 'action',
+      type: 'string',
+      title: 'Action',
+    },
   ],
 }
