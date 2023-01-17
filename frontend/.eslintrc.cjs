@@ -46,14 +46,14 @@ module.exports = {
 		node: true
 	},
 	rules: {
-		'@typescript-eslint/consistent-type-imports': 'error',
-		// '@typescript-eslint/consistent-type-imports': [
-		// 	'error',
-		// 	{
-		// 		prefer: 'type-imports',
-		// 		fixStyle: 'separate-type-imports'
-		// 	}
-		// ],
+		// '@typescript-eslint/consistent-type-imports': 'error',
+		'@typescript-eslint/consistent-type-imports': [
+			'error',
+			{
+				prefer: 'type-imports',
+				fixStyle: 'separate-type-imports'
+			}
+		],
 		'simple-import-sort/imports': 'error',
 		'simple-import-sort/exports': 'error'
 	}
