@@ -19,6 +19,11 @@ export default {
           title: 'Profession',
         },
         {
+          name: 'yearsOfExperience',
+          type: 'number',
+          title: 'Years of Experience',
+        },
+        {
           name: 'socialLinks',
           type: 'array',
           title: 'Social Links',
@@ -30,6 +35,21 @@ export default {
               },
             },
           ],
+        },
+        {
+          name: 'myPic',
+          type: 'image',
+          title: 'My Pic',
+          options: {
+            metadata: [
+              'blurhash', // Default: included
+            ],
+          },
+        },
+        {
+          name: 'cv',
+          type: 'file',
+          title: 'CV',
         },
       ],
     },
@@ -85,11 +105,11 @@ export default {
               name: 'icon',
               type: 'image',
               title: 'Icon',
-              // options: {
-              //   metadata: [
-              //     'blurhash', // Default: included
-              //   ],
-              // },
+              options: {
+                metadata: [
+                  'blurhash', // Default: included
+                ],
+              },
             },
           ],
         },

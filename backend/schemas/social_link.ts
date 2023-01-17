@@ -9,9 +9,9 @@ export default {
       title: 'Label',
     },
     {
-      name: 'url',
+      name: 'value',
       type: 'string',
-      title: 'URL',
+      title: 'Value',
     },
     {
       name: 'action',
