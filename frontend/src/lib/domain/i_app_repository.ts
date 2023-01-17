@@ -1,5 +1,5 @@
-import type { HomeData } from '.';
+import type { HomePageModel } from '.';
 
 export interface IAppRepository {
-	getHomeData(): Promise<HomeData>;
+	getHomeData(): Promise<HomePageModel>;
 }

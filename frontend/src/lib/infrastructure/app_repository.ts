@@ -1,8 +1,8 @@
-import type { HomeData, IAppRepository } from '../domain';
+import type { HomePageModel, IAppRepository } from '../domain';
 import { client } from './sanity_client';
 
 class AppRepository implements IAppRepository {
-	getHomeData = async (): Promise<HomeData> => {
+	getHomeData = async (): Promise<HomePageModel> => {
 		const data = await client.fetch(
 			`*[_type == "home"]{
 				intro 
@@ -22,7 +22,7 @@ class AppRepository implements IAppRepository {
 
 		console.log('APPLOG :: AppRepository  :: data : ', data);
 
-		const homeData: HomeData = data[0];
+		const homeData: HomePageModel = data[0];
 
 		return homeData;
 	};

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { HomeData } from '$lib/domain';
+	import type { HomePageModel } from '$lib/domain';
 	import IntroSection from '$lib/sections/intro_section.svelte';
 
-	export let data: HomeData;
+	export let data: HomePageModel;
 </script>
 
 <IntroSection data={data.intro} styles={''} />

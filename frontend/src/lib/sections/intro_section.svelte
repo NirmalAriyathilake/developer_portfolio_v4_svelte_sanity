@@ -1,9 +1,9 @@
 <script lang="ts">
 	import SocialLinkButton from '$lib/components/social_link_button.svelte';
-	import type { IntroData } from '$lib/domain';
+	import type { IntroSectionModel } from '$lib/domain';
 
 	export let styles: string;
-	export let data: IntroData;
+	export let data: IntroSectionModel;
 </script>
 
 <div class={`top-0 flex w-full flex-col items-center bg-base-300 pl-10 lg:flex-row ${styles}`}>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { SocialLink } from '../domain';
+	import type { SocialLinkModel } from '../domain';
 
-	export let socialLink: SocialLink;
+	export let socialLink: SocialLinkModel;
 </script>
 
 <a
