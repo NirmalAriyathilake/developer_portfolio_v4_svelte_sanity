@@ -6,28 +6,28 @@
 	export let data: IntroData;
 </script>
 
-<div class={`flex lg:flex-row flex-col w-full top-0 bg-base-300 items-center pl-10 ${styles}`}>
-	<div class="flex flex-col w-full items-start ml-10">
+<div class={`top-0 flex w-full flex-col items-center bg-base-300 pl-10 lg:flex-row ${styles}`}>
+	<div class="ml-10 flex w-full flex-col items-start">
 		<h1 class="text-9xl font-bold">
 			Hey<span class="text-primary">,</span>
 		</h1>
 
-		<div class="text-7xl dash-title font-bold mt-10">
+		<div class="dash-title mt-10 text-7xl font-bold">
 			I&apos;m {data.name}
 		</div>
 
-		<h1 class="text-7xl font-semibold mt-10">
+		<h1 class="mt-10 text-7xl font-semibold">
 			{data.profession}
 		</h1>
 
-		<h1 class="text-4xl dash-title font-semibold mt-5">
+		<h1 class="dash-title mt-5 text-4xl font-semibold">
 			{data.yearsOfExperience}+ years of experience
 		</h1>
 
-		<div class="flex flex-row gap-5 mt-10">
-			<a class="btn btn-outline btn-primary btn-lg" href={'#contact'}> Contact Me </a>
+		<div class="mt-10 flex flex-row gap-5">
+			<a class="btn-outline btn-primary btn-lg btn" href={'#contact'}> Contact Me </a>
 			<a
-				class="btn btn-primary btn-lg"
+				class="btn-primary btn-lg btn"
 				href={`data:${data.cv}`}
 				download="Nirmal Ariyathilake CV"
 				type="application/pdf"
@@ -36,7 +36,7 @@
 			</a>
 		</div>
 
-		<div class="flex flex-row mt-10 items-center self-center gap-3">
+		<div class="mt-10 flex flex-row items-center gap-3 self-center">
 			{#each data.socialLinks as socialLink}
 				<SocialLinkButton {socialLink} />
 			{/each}
