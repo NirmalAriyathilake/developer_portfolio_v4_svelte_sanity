@@ -42,6 +42,7 @@
 	},
 	"type": "module",
 	"lint-staged": {
-		"*": "pnpm check && pnpm format && pnpn lint"
+		"*.{svelte, ts, js}": "pnpm check",
+		"*.{svelte, ts, js, json, css, html}": "pnpm format"
 	}
 }
