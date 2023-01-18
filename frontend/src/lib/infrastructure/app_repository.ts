@@ -16,6 +16,16 @@ class AppRepository implements IAppRepository {
 							value,
 							action
 						}
+					},
+				about 
+					{
+						...,
+						"myPicTwoUrl": myPicTwo.asset->url,
+						infoCards[] -> 
+						{
+							label,
+							value
+						}
 					}
 				}`
 		);

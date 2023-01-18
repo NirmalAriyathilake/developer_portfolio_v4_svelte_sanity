@@ -18,7 +18,7 @@ export type AboutInfoModel = {
 	value: string;
 };
 
-export type AboutSectionData = {
+export type AboutSectionModel = {
 	infoCards: AboutInfoModel[];
 	message: string;
 	myPicTwoUrl: string;
@@ -26,4 +26,5 @@ export type AboutSectionData = {
 
 export type HomePageModel = {
 	intro: IntroSectionModel;
+	about: AboutSectionModel;
 };
