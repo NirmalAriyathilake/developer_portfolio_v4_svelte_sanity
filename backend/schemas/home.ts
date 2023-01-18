@@ -64,6 +64,16 @@ export default {
           title: 'Message',
         },
         {
+          name: 'myPicTwo',
+          type: 'image',
+          title: 'My Pic 2',
+          options: {
+            metadata: [
+              'blurhash', // Default: included
+            ],
+          },
+        },
+        {
           name: 'infoCards',
           type: 'array',
           title: 'Info Cards',

@@ -18,5 +18,10 @@ export default {
       type: 'string',
       title: 'Action',
     },
+    {
+      name: 'icon',
+      type: 'image',
+      title: 'Icon'
+    }
   ],
 }
