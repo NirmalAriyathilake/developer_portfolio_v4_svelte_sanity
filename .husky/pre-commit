@@ -6,4 +6,4 @@ if [ -t 2 ]; then
 fi
 
 cd frontend
-pnpx lint-staged
+pnpm lint-staged
