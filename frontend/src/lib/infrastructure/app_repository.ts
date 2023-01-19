@@ -1,10 +1,9 @@
-import type { HomePageModel, IAppRepository } from '../domain';
+import type { AppAssetModel, HomePageModel } from '../domain';
 import { client } from './sanity_client';
 
-class AppRepository implements IAppRepository {
-	getHomeData = async (): Promise<HomePageModel> => {
-		const data = await client.fetch(
-			`*[_type == "home"]{
+export const getHomeData = async (): Promise<HomePageModel> => {
+	const data = await client.fetch(
+		`*[_type == "home"]{
 				intro 
 					{
 						...,
@@ -28,14 +27,31 @@ class AppRepository implements IAppRepository {
 						}
 					}
 				}`
-		);
+	);
 
-		console.log('APPLOG :: AppRepository  :: data : ', data);
+	console.log('APPLOG :: AppRepository  :: getHomeData :: data : ', data);
 
-		const homeData: HomePageModel = data[0];
+	const homeData: HomePageModel = data[0];
 
-		return homeData;
-	};
-}
+	return homeData;
+};
 
-export default AppRepository;
+export const getAssets = async () => {
+	const data = await client.fetch(
+		`*[_type == "app_asset"]
+		{
+			"imageUrl": image.asset->url,
+			name
+		}`
+	);
+
+	console.log('APPLOG :: AppRepository :: loadAssets :: data : ', data);
+
+	const assetMap: Record<string, string> = {};
+
+	data.forEach((asset: AppAssetModel) => {
+		assetMap[asset.name] = asset.imageUrl;
+	});
+
+	return assetMap;
+};

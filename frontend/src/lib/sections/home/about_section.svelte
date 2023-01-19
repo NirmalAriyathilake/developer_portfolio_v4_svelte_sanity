@@ -3,8 +3,8 @@
 	import SectionTitle from '$lib/components/section_title.svelte';
 	import type { AboutSectionModel } from '$lib/domain';
 
-	export let styles: string;
 	export let data: AboutSectionModel;
+	export let styles: string = '';
 </script>
 
 <div

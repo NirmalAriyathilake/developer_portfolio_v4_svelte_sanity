@@ -1,9 +1,9 @@
-import { AppRepository } from '$lib/infrastructure';
+import { getHomeData } from '$lib/infrastructure';
 
 import type { PageServerLoad } from './$types';
 
-export const load = (async () => {
-	const data = await new AppRepository().getHomeData();
+export const load: PageServerLoad = async () => {
+	const data = await getHomeData();
 
 	if (data) {
 		return data;
@@ -12,4 +12,4 @@ export const load = (async () => {
 		status: 500,
 		body: new Error('Internal Server Error')
 	};
-}) satisfies PageServerLoad;
+};

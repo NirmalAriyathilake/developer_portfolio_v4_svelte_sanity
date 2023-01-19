@@ -28,3 +28,13 @@ export type HomePageModel = {
 	intro: IntroSectionModel;
 	about: AboutSectionModel;
 };
+
+export type NavBarItemModel = {
+	label: string;
+	link: string;
+};
+
+export type AppAssetModel = {
+	name: string;
+	imageUrl: string;
+};

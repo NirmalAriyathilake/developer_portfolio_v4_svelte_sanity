@@ -1,10 +1,13 @@
 <script lang="ts">
+	import NavBarContainer from '$lib/components/nav_bar_container.svelte';
 	import type { HomePageModel } from '$lib/domain';
-	import AboutSection from '$lib/sections/about_section.svelte';
-	import IntroSection from '$lib/sections/intro_section.svelte';
+	import { homeNavBarItems } from '$lib/domain/constants';
+	import AboutSection from '$lib/sections/home/about_section.svelte';
+	import IntroSection from '$lib/sections/home/intro_section.svelte';
 
 	export let data: HomePageModel;
 </script>
 
-<IntroSection data={data.intro} styles={''} />
-<AboutSection data={data.about} styles={''} />
+<NavBarContainer navBarItems={homeNavBarItems} />
+<IntroSection data={data.intro} />
+<AboutSection data={data.about} />

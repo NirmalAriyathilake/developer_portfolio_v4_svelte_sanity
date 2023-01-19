@@ -1,1 +1,1 @@
-export { default as AppRepository } from './app_repository';
+export * from './app_repository';
