@@ -4,14 +4,14 @@
 	import type { AboutSectionModel } from '$lib/domain';
 
 	export let data: AboutSectionModel;
-	export let styles: string = '';
+	export let className: string = '';
 </script>
 
 <div
-	class={`flex w-full scroll-m-24 flex-col items-start justify-start px-10 py-10 ${styles}`}
+	class={`flex w-full scroll-m-24 flex-col items-start justify-start px-10 py-10 ${className}`}
 	id="about"
 >
-	<SectionTitle title="About Me" styles={''} />
+	<SectionTitle title="About Me" />
 	<div class="flex flex-row items-center">
 		<div class="mr-10 w-3/5">
 			<img src={data.myPicTwoUrl} alt="My Pic 2" class="rounded-xl" />
@@ -20,7 +20,7 @@
 			<div class="text-justify text-lg">{data.message}</div>
 			<div class="mt-5 grid grid-cols-2 grid-rows-2 gap-4">
 				{#each data.infoCards as infoCard}
-					<AboutInfoCard aboutInfo={infoCard} styles={''} />
+					<AboutInfoCard aboutInfo={infoCard} />
 				{/each}
 			</div>
 		</div>

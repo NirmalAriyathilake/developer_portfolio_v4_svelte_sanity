@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { NavBarItemModel } from '$lib/domain';
-	import NavBarItem from './nav_bar_item.svelte';
 	import { appAssetsStore } from '$lib/store/app_store';
+	import NavBarItem from './nav_bar_item.svelte';
 
 	export let navBarItems: NavBarItemModel[];
-	export let styles: string = '';
+	export let className: string = '';
 
 	$: isNavBarFloating = false;
 
@@ -24,7 +24,7 @@
 </script>
 
 <div
-	class={`top-0 left-0 right-0 z-50 flex w-full flex-wrap items-center bg-base-300 p-3 ${styles}`}
+	class={`top-0 left-0 right-0 z-50 flex w-full flex-wrap items-center bg-base-300 p-3 ${className}`}
 	id="HeaderSection"
 >
 	<a href={'/'} class="mr-4 inline-flex items-center p-2 ">
@@ -43,7 +43,7 @@
 		>
 			<div class="ml-auto inline-flex h-auto w-auto flex-row items-center">
 				{#each navBarItems as navBarItem}
-					<NavBarItem label={navBarItem.label} link={navBarItem.link} styles="header-item" />
+					<NavBarItem label={navBarItem.label} link={navBarItem.link} className="header-item" />
 				{/each}
 			</div>
 		</div>
@@ -78,7 +78,7 @@
 					<NavBarItem
 						label={navBarItem.label}
 						link={navBarItem.link}
-						styles="hover:bg-white btn-block header-item-mobile"
+						className="hover:bg-white btn-block header-item-mobile"
 					/>
 				{/each}
 			</div>

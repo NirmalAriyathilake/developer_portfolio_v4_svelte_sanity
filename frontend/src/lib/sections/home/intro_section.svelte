@@ -3,10 +3,10 @@
 	import type { IntroSectionModel } from '$lib/domain';
 
 	export let data: IntroSectionModel;
-	export let styles: string = '';
+	export let className: string = '';
 </script>
 
-<div class={`top-0 flex w-full flex-col items-center bg-base-300 pl-10 lg:flex-row ${styles}`}>
+<div class={`top-0 flex w-full flex-col items-center bg-base-300 pl-10 lg:flex-row ${className}`}>
 	<div class="ml-10 flex w-full flex-col items-start">
 		<h1 class="text-9xl font-bold">
 			Hey<span class="text-primary">,</span>
