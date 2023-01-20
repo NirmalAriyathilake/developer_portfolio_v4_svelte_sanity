@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import type { NavBarItemModel } from '$lib/domain';
 	import { appAssetsStore } from '$lib/store/app_store';
+	import { onMount } from 'svelte';
 	import NavBarItem from './nav_bar_item.svelte';
 
 	export let navBarItems: NavBarItemModel[];
@@ -9,8 +11,8 @@
 	$: isNavBarFloating = false;
 
 	const menuClick = () => {
-		const menu = document.querySelector('#app-menu');
-		const nav = document.querySelector('#HeaderSection');
+		const menu = document.querySelector('#mobile-nav-bar');
+		const nav = document.querySelector('#NavBarContainer');
 
 		menu?.classList.toggle('hidden');
 
@@ -21,11 +23,75 @@
 
 	const appAssetsMap: Record<string, string> = $appAssetsStore;
 	const logoUrl = appAssetsMap['logo'];
+
+	const onScroll = () => {
+		const { pageYOffset, scrollY } = window;
+
+		console.log('APPLOG :: pageYOffset : ', pageYOffset);
+
+		const nav = document.querySelector('#NavBarContainer');
+		let menu = document.querySelector('#mobile-nav-bar');
+
+		menu?.classList.add('hidden');
+
+		if (pageYOffset > 0) {
+			nav?.classList.add('shadow-xl');
+		} else {
+			nav?.classList.remove('shadow-xl');
+		}
+
+		const navLinks = document.querySelectorAll('.navbar-item');
+		const mobileNavLinks = document.querySelectorAll('.navbar-item-mobile');
+
+		navLinks.forEach((link) => {
+			if (link instanceof HTMLAnchorElement) {
+				const target = document.querySelector(link.hash);
+
+				if (
+					target != null &&
+					target instanceof HTMLElement &&
+					target.offsetTop - 100 <= pageYOffset &&
+					target.offsetTop + target.offsetHeight - 100 > pageYOffset
+				) {
+					link.classList.add('navbar-item-active');
+				} else {
+					link.classList.remove('navbar-item-active');
+				}
+			}
+		});
+
+		mobileNavLinks.forEach((link) => {
+			if (link instanceof HTMLAnchorElement) {
+				const target = document.querySelector(link.hash);
+
+				if (
+					target != null &&
+					target instanceof HTMLElement &&
+					target.offsetTop - 100 <= pageYOffset &&
+					target.offsetTop + target.offsetHeight - 100 > pageYOffset
+				) {
+					link.classList.add('bg-white');
+				} else {
+					link.classList.remove('bg-white');
+				}
+			}
+		});
+	};
+
+	onMount(() => {
+		if (browser) {
+			window.addEventListener('scroll', onScroll, { passive: true });
+
+			return () => {
+				window.removeEventListener('scroll', onScroll);
+			};
+		}
+	});
 </script>
 
 <div
-	class={`top-0 left-0 right-0 z-50 flex w-full flex-wrap items-center bg-base-300 p-3 ${className}`}
-	id="HeaderSection"
+	class={`fixed top-0 left-0 right-0 z-50 flex w-full flex-wrap items-center bg-base-300 p-3 ${className}`}
+	id="NavBarContainer"
 >
 	<a href={'/'} class="mr-4 inline-flex items-center p-2 ">
 		<img
@@ -43,7 +109,7 @@
 		>
 			<div class="ml-auto inline-flex h-auto w-auto flex-row items-center">
 				{#each navBarItems as navBarItem}
-					<NavBarItem label={navBarItem.label} link={navBarItem.link} className="header-item" />
+					<NavBarItem label={navBarItem.label} link={navBarItem.link} className="navbar-item" />
 				{/each}
 			</div>
 		</div>
@@ -72,13 +138,13 @@
 		{/if}
 	</div>
 	{#if navBarItems.length > 0}
-		<div class="hidden w-full lg:hidden" id="app-menu">
+		<div class="hidden w-full lg:hidden" id="mobile-nav-bar">
 			<div class="flex w-full  flex-col items-center gap-2">
 				{#each navBarItems as navBarItem}
 					<NavBarItem
 						label={navBarItem.label}
 						link={navBarItem.link}
-						className="hover:bg-white btn-block header-item-mobile"
+						className="hover:bg-white btn-block navbar-item-mobile"
 					/>
 				{/each}
 			</div>

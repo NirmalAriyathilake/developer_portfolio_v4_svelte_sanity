@@ -10,6 +10,6 @@
 </script>
 
 <NavBarContainer navBarItems={homeNavBarItems} />
-<IntroSection data={data.intro} />
+<IntroSection data={data.intro} className="pt-24" />
 <AboutSection data={data.about} />
 <ServicesSection data={data.services} />
