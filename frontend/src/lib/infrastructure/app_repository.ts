@@ -25,6 +25,11 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 							label,
 							value
 						}
+					},
+				services[]
+					{
+						...,
+						"iconUrl": icon.asset->url
 					}
 				}`
 	);

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	@apply scroll-smooth;
+}
+
 .dash-title {
 	@apply relative ml-16;
 }
