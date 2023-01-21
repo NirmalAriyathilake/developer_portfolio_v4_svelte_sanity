@@ -25,7 +25,7 @@
 	const logoUrl = appAssetsMap['logo'];
 
 	const onScroll = () => {
-		const { pageYOffset, scrollY } = window;
+		const { pageYOffset } = window;
 
 		const nav = document.querySelector('#NavBarContainer');
 		let menu = document.querySelector('#mobile-nav-bar');
