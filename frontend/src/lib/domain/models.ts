@@ -57,6 +57,7 @@ export type ServiceModel = {
 
 export type SocialLinkModel = {
 	action: string;
+	iconUrl: string;
 	label: string;
 	value: string;
 };

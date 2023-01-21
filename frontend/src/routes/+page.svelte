@@ -3,6 +3,7 @@
 	import type { HomePageModel } from '$lib/domain';
 	import { homeNavBarItems } from '$lib/domain/constants';
 	import AboutSection from '$lib/sections/home/about_section.svelte';
+	import ContactsSection from '$lib/sections/home/contacts_section.svelte';
 	import IntroSection from '$lib/sections/home/intro_section.svelte';
 	import ProjectsSection from '$lib/sections/home/projects_section.svelte';
 	import ServicesSection from '$lib/sections/home/services_section.svelte';
@@ -17,3 +18,4 @@
 {#if data.featuredProjects.length > 0}
 	<ProjectsSection data={data.featuredProjects} />
 {/if}
+<ContactsSection data={data.contacts} />

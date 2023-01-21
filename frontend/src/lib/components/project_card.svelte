@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	</div>
-	<figure class="m-5" style="width: 390px;">
+	<figure class="mx-5" style="width: 500px;">
 		<img src={data.thumbnailUrl} alt="Thumbnail" placeholder="blur" />
 	</figure>
 </div>

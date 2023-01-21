@@ -35,6 +35,11 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 					{
 						...,
 						"thumbnailUrl": thumbnail.asset->url
+					},
+				contacts[] ->
+					{
+						...,
+						"iconUrl": icon.asset->url
 					}
 				}`
 	);
