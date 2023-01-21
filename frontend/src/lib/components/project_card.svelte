@@ -1,11 +1,13 @@
 <script lang="ts">
 	import type { ProjectModel } from '$lib/domain';
-	import { appAssetsStore } from '$lib/store/app_store';
+	import { appAssetsStore, theme } from '$lib/store/app_store';
 
 	const appAssetsMap: Record<string, string> = $appAssetsStore;
 
 	export let data: ProjectModel;
 	export let className: string = '';
+
+	$: imageNameSuffix = $theme === 'dark' ? 'Dark' : '';
 </script>
 
 <div
@@ -31,7 +33,7 @@
 				{#each data.links as link}
 					<a class="shadow-lg" href={link.url} target="_blank" rel="noreferrer">
 						<img
-							src={appAssetsMap[link.type]}
+							src={appAssetsMap[link.type + imageNameSuffix]}
 							alt={`${link.type} button`}
 							placeholder="blur"
 							width={211}
