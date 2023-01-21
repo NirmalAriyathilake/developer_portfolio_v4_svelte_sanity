@@ -4,6 +4,7 @@
 	import { appAssetsStore } from '$lib/store/app_store';
 	import { onMount } from 'svelte';
 	import NavBarItem from './nav_bar_item.svelte';
+	import ThemeToggleButton from './theme_toggle_button.svelte';
 
 	export let navBarItems: NavBarItemModel[];
 	export let className: string = '';
@@ -111,7 +112,10 @@
 				{/each}
 			</div>
 		</div>
-		<div class="ml-auto inline-flex">
+	{/if}
+	<div class="ml-auto inline-flex">
+		<ThemeToggleButton />
+		{#if navBarItems.length > 0}
 			<button
 				class="rounded p-3 text-primary outline-none ring-primary hover:text-primary hover:ring-2 lg:hidden "
 				on:click={menuClick}
@@ -131,7 +135,9 @@
 					/>
 				</svg>
 			</button>
-		</div>
+		{/if}
+	</div>
+	{#if navBarItems.length > 0}
 		<div class="hidden w-full lg:hidden" id="mobile-nav-bar">
 			<div class="flex w-full  flex-col items-center gap-2">
 				{#each navBarItems as navBarItem}
