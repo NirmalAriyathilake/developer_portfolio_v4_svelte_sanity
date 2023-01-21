@@ -27,8 +27,6 @@
 	const onScroll = () => {
 		const { pageYOffset, scrollY } = window;
 
-		console.log('APPLOG :: pageYOffset : ', pageYOffset);
-
 		const nav = document.querySelector('#NavBarContainer');
 		let menu = document.querySelector('#mobile-nav-bar');
 

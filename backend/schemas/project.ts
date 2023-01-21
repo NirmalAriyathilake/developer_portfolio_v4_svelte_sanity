@@ -63,9 +63,9 @@ export default {
           type: 'document',
           fields: [
             {
-              name: 'label',
+              name: 'type',
               type: 'string',
-              title: 'Label',
+              title: 'Type',
             },
             {
               name: 'url',

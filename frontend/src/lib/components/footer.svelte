@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { appAssetsStore } from '$lib/store/app_store';
 
-	export let className: string = '';
-
 	const appAssetsMap: Record<string, string> = $appAssetsStore;
+
 	const footerImageUrl = appAssetsMap['footer'];
+
+	export let className: string = '';
 </script>
 
 <footer class={`relative flex h-24 w-full items-center justify-center border-t ${className}`}>

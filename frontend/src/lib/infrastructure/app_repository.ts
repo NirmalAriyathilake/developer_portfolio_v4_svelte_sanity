@@ -30,6 +30,11 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 					{
 						...,
 						"iconUrl": icon.asset->url
+					},
+				featuredProjects[] ->
+					{
+						...,
+						"thumbnailUrl": thumbnail.asset->url
 					}
 				}`
 	);
