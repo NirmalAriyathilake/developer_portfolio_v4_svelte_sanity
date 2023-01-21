@@ -11,6 +11,10 @@
 	export let data: HomePageModel;
 </script>
 
+<svelte:head>
+	<title>Nirmal Code</title>
+</svelte:head>
+
 <NavBarContainer navBarItems={homeNavBarItems} />
 <IntroSection data={data.intro} className="pt-24" />
 <AboutSection data={data.about} />
