@@ -3,7 +3,11 @@
 
 	const appAssetsMap: Record<string, string> = $appAssetsStore;
 
-	const footerImageUrl = appAssetsMap['footer'];
+	let footerImageUrl = appAssetsMap['footer'];
+
+	if (footerImageUrl === undefined || footerImageUrl.length === 0) {
+		footerImageUrl = './footer_logo.png';
+	}
 
 	export let className: string = '';
 </script>

@@ -12,9 +12,9 @@
 			Hey<span class="text-primary">,</span>
 		</h1>
 
-		<div class="dash-title mt-10 text-7xl font-bold">
+		<h2 class="dash-title mt-10 text-7xl font-bold">
 			I&apos;m {data.name}
-		</div>
+		</h2>
 
 		<h1 class="mt-10 text-7xl font-semibold">
 			{data.profession}

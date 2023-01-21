@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import type { NavBarItemModel } from '$lib/domain';
-	import { appAssetsStore } from '$lib/store/app_store';
+	import { appAssetsStore, theme } from '$lib/store/app_store';
 	import { onMount } from 'svelte';
 	import NavBarItem from './nav_bar_item.svelte';
 	import ThemeToggleButton from './theme_toggle_button.svelte';
@@ -23,7 +23,20 @@
 	};
 
 	const appAssetsMap: Record<string, string> = $appAssetsStore;
-	const logoUrl = appAssetsMap['logo'];
+
+	const getLogoUrl = (themeValue: AppTheme) => {
+		const suffix = themeValue === 'dark' ? 'Dark' : '';
+
+		let value = appAssetsMap['logo' + suffix];
+
+		if (value === undefined || value.length === 0) {
+			value = './logo' + suffix + '.png';
+		}
+
+		return value;
+	};
+
+	$: logoUrl = getLogoUrl($theme);
 
 	const onScroll = () => {
 		const { pageYOffset } = window;

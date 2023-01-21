@@ -11,7 +11,6 @@
 	onMount(() => {
 		if (browser) {
 			const storageTheme = localStorage.getItem('theme');
-			console.log('storageTheme ' + storageTheme);
 
 			if (storageTheme === 'dark' || storageTheme === 'light') {
 				$theme = storageTheme;
@@ -23,8 +22,6 @@
 
 			let themeUnSub = theme.subscribe((value) => {
 				localStorage.setItem('theme', value);
-
-				console.log('Updating theme to ' + value);
 				document.documentElement.setAttribute('data-theme', value);
 			});
 
