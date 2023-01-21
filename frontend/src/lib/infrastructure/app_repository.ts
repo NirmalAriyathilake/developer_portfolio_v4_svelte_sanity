@@ -6,7 +6,9 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 		`*[_type == "home"]{
 				intro 
 					{
-						...,
+						name,
+						profession,
+						yearsOfExperience,
 						"myPicUrl": myPic.asset->url,
 						"cv": cv.asset->url,
 						socialLinks[] ->
@@ -18,7 +20,7 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 					},
 				about 
 					{
-						...,
+						message,
 						"myPicTwoUrl": myPicTwo.asset->url,
 						infoCards[] -> 
 						{
@@ -28,17 +30,34 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 					},
 				services[]
 					{
-						...,
+						description,
+						label,
+						seeMorePath,
 						"iconUrl": icon.asset->url
 					},
 				featuredProjects[] ->
 					{
-						...,
+						title,
+						shortDescription,
+						description,
+						language,
+						links[]
+						{
+							type, 
+							url
+						},
+						points[]
+						{
+							label,
+							value
+						},
 						"thumbnailUrl": thumbnail.asset->url
 					},
 				contacts[] ->
 					{
-						...,
+						label,
+						action,
+						value,
 						"iconUrl": icon.asset->url
 					}
 				}`
@@ -59,8 +78,6 @@ export const getAssets = async () => {
 			name
 		}`
 	);
-
-	console.log('APPLOG :: AppRepository :: loadAssets :: data : ', data);
 
 	const assetMap: Record<string, string> = {};
 

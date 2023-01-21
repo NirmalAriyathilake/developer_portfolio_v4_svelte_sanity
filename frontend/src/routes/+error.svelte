@@ -13,6 +13,8 @@
 			|{' '}
 			<p class="ml-5">{$page.error?.message ?? 'Error occurred'}</p>
 		</div>
-		<a href={'/'} class="btn-link btn mt-10 text-xl">Go back Home</a>
+		{#if $page.status != 500}
+			<a href={'/'} class="btn-link btn mt-10 text-xl">Go back Home</a>
+		{/if}
 	</div>
 </div>
