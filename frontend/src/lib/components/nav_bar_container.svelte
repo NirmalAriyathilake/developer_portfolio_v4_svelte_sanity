@@ -111,9 +111,7 @@
 				{/each}
 			</div>
 		</div>
-	{/if}
-	<div class="ml-auto inline-flex">
-		{#if navBarItems.length > 0}
+		<div class="ml-auto inline-flex">
 			<button
 				class="rounded p-3 text-primary outline-none ring-primary hover:text-primary hover:ring-2 lg:hidden "
 				on:click={menuClick}
@@ -133,9 +131,7 @@
 					/>
 				</svg>
 			</button>
-		{/if}
-	</div>
-	{#if navBarItems.length > 0}
+		</div>
 		<div class="hidden w-full lg:hidden" id="mobile-nav-bar">
 			<div class="flex w-full  flex-col items-center gap-2">
 				{#each navBarItems as navBarItem}
