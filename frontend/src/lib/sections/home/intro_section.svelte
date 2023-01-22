@@ -22,7 +22,7 @@
 			<img
 				src={`${data.myPicUrl}?auto=format`}
 				alt="My Pic"
-				class="mt-10 block w-80 self-center lg:hidden"
+				class="mt-10 flex w-80 self-center lg:hidden"
 			/>
 
 			<h1 class="mt-10 text-4xl font-semibold lg:text-7xl">
@@ -36,7 +36,17 @@
 			<div class="mt-10 flex w-full flex-col gap-5 self-center lg:flex-row lg:self-start">
 				<a class="btn-outline btn-primary btn-lg btn" href={'#contact'}> Contact Me </a>
 				<a
-					class="btn-primary btn-lg btn"
+					class="btn-primary btn-lg btn flex lg:hidden"
+					href={`${data.cv}`}
+					download="Nirmal Ariyathilake CV"
+					type="application/pdf"
+				>
+					Download CV
+				</a>
+
+				<!-- Desktop browser needs 'data:' in url to download files -->
+				<a
+					class="btn-primary btn-lg btn hidden lg:flex"
 					href={`data:${data.cv}`}
 					download="Nirmal Ariyathilake CV"
 					type="application/pdf"
@@ -53,5 +63,5 @@
 		</div>
 	</div>
 
-	<img src={`${data.myPicUrl}?auto=format`} alt="My Pic" class="mt-10 mr-10 hidden w-96 lg:block" />
+	<img src={`${data.myPicUrl}?auto=format`} alt="My Pic" class="mt-10 mr-10 hidden w-96 lg:flex" />
 </div>

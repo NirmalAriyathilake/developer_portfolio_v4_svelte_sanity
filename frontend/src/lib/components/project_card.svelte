@@ -29,7 +29,7 @@
 					</p>
 				{/each}
 			</div>
-			<div class="card-actions flex flex-col items-center justify-end gap-5">
+			<div class="card-actions flex flex-row items-center justify-end gap-5 lg:flex-col">
 				{#each data.links as link}
 					<a class="shadow-lg" href={link.url} target="_blank" rel="noreferrer">
 						<img
