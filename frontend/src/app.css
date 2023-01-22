@@ -35,3 +35,7 @@
 .social-btn:hover::before {
 	@apply w-1/2;
 }
+
+.section {
+	@apply scroll-m-24 gap-5;
+}

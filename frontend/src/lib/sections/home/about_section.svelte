@@ -8,17 +8,15 @@
 </script>
 
 <div
-	class={`flex w-full scroll-m-24 flex-col items-start justify-start px-10 py-10 ${className}`}
+	class={`section flex w-full flex-col items-start justify-start px-10 py-10 ${className}`}
 	id="about"
 >
 	<SectionTitle title="About Me" />
-	<div class="flex flex-row items-center">
-		<div class="mr-10 w-3/5">
-			<img src={data.myPicTwoUrl} alt="My Pic 2" class="rounded-xl" />
-		</div>
+	<div class="flex flex-col items-center lg:flex-row lg:gap-10">
+		<img src={data.myPicTwoUrl} alt="My Pic 2" class="w-80 rounded-xl" />
 		<div class="flex grow flex-col py-6">
 			<div class="text-justify text-lg">{data.message}</div>
-			<div class="mt-5 grid grid-cols-2 grid-rows-2 gap-4">
+			<div class="mt-5 flex grid-cols-2 grid-rows-2 flex-col gap-4 lg:grid">
 				{#each data.infoCards as infoCard}
 					<AboutInfoCard aboutInfo={infoCard} />
 				{/each}
