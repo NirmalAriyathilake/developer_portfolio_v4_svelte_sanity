@@ -28,6 +28,6 @@
 	}
 
 	.navbar-item-active::before {
-		@apply absolute bottom-0 left-3 right-0 h-1 w-1/2 rounded-lg bg-primary content-[""];
+		@apply absolute bottom-2 left-3 right-0 h-1 w-1/2 rounded-lg bg-primary content-[""];
 	}
 </style>
