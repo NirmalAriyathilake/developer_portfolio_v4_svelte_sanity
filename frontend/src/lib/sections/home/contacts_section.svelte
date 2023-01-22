@@ -14,7 +14,7 @@
 	<SectionTitle title="Contact Me" />
 	<div class="flex flex-col gap-10 lg:w-full lg:flex-row">
 		{#each data as contact}
-			<ContactCard data={contact} className="lg:basis-1/3" />
+			<ContactCard data={contact} />
 		{/each}
 	</div>
 </div>

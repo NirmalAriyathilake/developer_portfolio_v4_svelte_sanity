@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import type { NavBarItemModel } from '$lib/domain';
-	import { appAssetsStore, theme } from '$lib/store/app_store';
+	import { theme } from '$lib/store/app_store';
 	import { onMount } from 'svelte';
 	import NavBarItem from './nav_bar_item.svelte';
 	import ThemeToggleButton from './theme_toggle_button.svelte';
@@ -22,8 +22,6 @@
 		}
 	};
 
-	const appAssetsMap: Record<string, string> = $appAssetsStore;
-
 	const getLogoUrl = (themeValue: AppTheme) => {
 		const suffix = themeValue === 'dark' ? 'Dark' : '';
 
@@ -32,7 +30,7 @@
 		return value;
 	};
 
-	$: logoUrl = getLogoUrl($theme);
+	$: assetLogoPath = getLogoUrl($theme);
 
 	const onScroll = () => {
 		const { pageYOffset } = window;
@@ -102,7 +100,7 @@
 	id="NavBarContainer"
 >
 	<a href={'/'} class="mr-4 inline-flex w-10 cursor-pointer items-center border-none">
-		<img src={logoUrl} alt="Logo" class="rounded-md" />
+		<img src={assetLogoPath} alt="Logo" class="rounded-md" />
 	</a>
 
 	{#if navBarItems.length > 0}
