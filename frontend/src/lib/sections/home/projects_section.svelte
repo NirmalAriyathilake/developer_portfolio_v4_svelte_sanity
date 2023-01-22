@@ -12,8 +12,7 @@
 	id="projects"
 >
 	<SectionTitle title="My Projects" />
-
-	<div class="mt-5 flex flex-col gap-10">
+	<div class="flex flex-col gap-10">
 		{#each data as project}
 			<ProjectCard data={project} />
 		{/each}
