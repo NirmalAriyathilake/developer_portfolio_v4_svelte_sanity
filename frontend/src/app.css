@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+	@apply scroll-smooth;
+}
+
+.dash-title {
+	@apply relative ml-16;
+}
+
+.dash-title::before {
+	@apply absolute -left-16 top-1/2 ml-2 h-1 w-11 rounded-lg bg-primary content-[""];
+}
+
+.section-title {
+	@apply relative;
+}
+
+.section-title::before {
+	@apply absolute -bottom-2 left-0 h-1 w-2/5 rounded-lg bg-primary content-[""];
+}
+
+.social-btn {
+	@apply relative;
+	@apply transition-all duration-200 ease-in-out;
+}
+
+.social-btn::before {
+	@apply absolute bottom-1 left-3 right-0 h-1 w-0 rounded-lg bg-primary content-[""];
+	@apply transition-all duration-200 ease-in-out;
+}
+
+.social-btn:hover::before {
+	@apply w-1/2;
+}
+
+.section {
+	@apply scroll-m-20 gap-5;
+}
