@@ -27,11 +27,7 @@
 	const getLogoUrl = (themeValue: AppTheme) => {
 		const suffix = themeValue === 'dark' ? 'Dark' : '';
 
-		let value = appAssetsMap['logo' + suffix];
-
-		if (value === undefined || value.length === 0) {
-			value = './logo' + suffix + '.png';
-		}
+		let value = './logo' + suffix + '.png';
 
 		return value;
 	};

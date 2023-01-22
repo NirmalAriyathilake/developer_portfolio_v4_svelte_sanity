@@ -3,17 +3,13 @@
 
 	const appAssetsMap: Record<string, string> = $appAssetsStore;
 
-	let footerImageUrl = appAssetsMap['footer'];
-
-	if (footerImageUrl === undefined || footerImageUrl.length === 0) {
-		footerImageUrl = './footer_logo.png';
-	}
+	let footerImageUrl = './footer_logo.png';
 
 	export let className: string = '';
 </script>
 
 <footer
-	class={`relative flex h-24 w-full flex-col items-center justify-center gap-5 border-t lg:flex-row  ${className}`}
+	class={`relative flex w-full flex-col items-center justify-center gap-5 border-t p-5 lg:flex-row  ${className}`}
 >
 	Copyright &copy; {`${new Date().getFullYear()}`} - All rights reserved by
 	<img src={footerImageUrl} alt="Logo" class="mx-5" width={121} height={16} />
