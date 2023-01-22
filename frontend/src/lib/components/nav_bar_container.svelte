@@ -106,7 +106,7 @@
 	id="NavBarContainer"
 >
 	<a href={'/'} class="mr-4 inline-flex w-10 cursor-pointer items-center border-none">
-		<img src={logoUrl} alt="Logo" />
+		<img src={logoUrl} alt="Logo" class="rounded-md" />
 	</a>
 
 	{#if navBarItems.length > 0}
