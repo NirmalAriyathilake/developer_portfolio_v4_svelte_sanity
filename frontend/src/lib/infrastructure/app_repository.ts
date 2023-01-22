@@ -2,8 +2,7 @@ import type { AppAssetModel, HomePageModel } from '../domain';
 import { client } from './sanity_client';
 
 export const getHomeData = async (): Promise<HomePageModel> => {
-	const data = await client.fetch(
-		`*[_type == "home"]{
+	const query = `*[_type == "home"]{
 				intro 
 					{
 						name,
@@ -60,8 +59,9 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 						value,
 						"iconUrl": icon.asset->url
 					}
-				}`
-	);
+				}`;
+
+	const data = await client.fetch(query);
 
 	console.log('APPLOG :: AppRepository  :: getHomeData :: data : ', data);
 
@@ -71,13 +71,13 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 };
 
 export const getAssets = async () => {
-	const data = await client.fetch(
-		`*[_type == "app_asset"]
+	const query = `*[_type == "app_asset"]
 		{
 			"imageUrl": image.asset->url,
 			name
-		}`
-	);
+		}`;
+
+	const data = await client.fetch(query);
 
 	const assetMap: Record<string, string> = {};
 

@@ -102,17 +102,11 @@
 </script>
 
 <div
-	class={`fixed top-0 left-0 right-0 z-50 flex w-full flex-wrap items-center bg-base-300 p-3 ${className}`}
+	class={`fixed top-0 left-0 right-0 z-50 flex w-full flex-wrap items-center bg-base-300 px-3 py-2 ${className}`}
 	id="NavBarContainer"
 >
-	<a href={'/'} class="mr-4 inline-flex items-center p-2 ">
-		<img
-			src={logoUrl}
-			class="btn-square btn-lg btn border-none"
-			width={64}
-			height={64}
-			alt="Logo"
-		/>
+	<a href={'/'} class="mr-4 inline-flex w-10 cursor-pointer items-center border-none">
+		<img src={logoUrl} alt="Logo" />
 	</a>
 
 	{#if navBarItems.length > 0}
