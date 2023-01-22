@@ -11,6 +11,10 @@
 	target="_blank"
 	rel="noreferrer"
 >
-	<img src={data.iconUrl} alt={data.label} style="width: 48px;" />
+	<img
+		src={`${data.iconUrl}?auto=format`}
+		alt={`${data.label} contact button`}
+		style="width: 48px;"
+	/>
 	<p class="mt-5 text-lg">{data.value}</p>
 </a>

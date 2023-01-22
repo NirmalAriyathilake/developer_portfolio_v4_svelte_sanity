@@ -15,7 +15,7 @@
 >
 	<div
 		class="h-full w-full bg-contain bg-center bg-no-repeat"
-		style={`background-image: url(${appAssetsMap[data.language + 'Backdrop']})`}
+		style={`background-image: url(${appAssetsMap[data.language + 'Backdrop']}?auto=format)`}
 	>
 		<h2 class="card-title">{data.title}</h2>
 		<h3 class="dash-title">{data.shortDescription}</h3>
@@ -33,7 +33,7 @@
 				{#each data.links as link}
 					<a class="shadow-lg" href={link.url} target="_blank" rel="noreferrer">
 						<img
-							src={appAssetsMap[link.type + imageNameSuffix]}
+							src={`${appAssetsMap[link.type + imageNameSuffix]}?auto=format`}
 							alt={`${link.type} button`}
 							class="w-36 lg:w-52"
 						/>
@@ -42,5 +42,10 @@
 			</div>
 		</div>
 	</div>
-	<img src={data.thumbnailUrl} alt="Thumbnail" placeholder="blur" class="w-72 lg:w-80" />
+	<img
+		src={`${data.thumbnailUrl}?auto=format`}
+		alt="Screenshots of the project"
+		placeholder="blur"
+		class="w-72 lg:w-80"
+	/>
 </div>
