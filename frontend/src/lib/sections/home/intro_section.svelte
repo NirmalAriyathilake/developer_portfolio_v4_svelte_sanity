@@ -22,7 +22,7 @@
 			<img
 				src={`${data.myPicUrl}?auto=format`}
 				alt="My Pic"
-				class="mt-10 mr-10 block w-80 self-center lg:hidden"
+				class="mt-10 block w-80 self-center lg:hidden"
 			/>
 
 			<h1 class="mt-10 text-4xl font-semibold lg:text-7xl">
