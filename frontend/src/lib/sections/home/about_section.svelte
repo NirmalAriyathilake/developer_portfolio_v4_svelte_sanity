@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class={`section flex w-full flex-col items-start justify-start px-10 py-10 ${className}`}
+	class={`section flex w-full flex-col items-start justify-start px-10 pt-10 pb-5 ${className}`}
 	id="about"
 >
 	<SectionTitle title="About Me" />

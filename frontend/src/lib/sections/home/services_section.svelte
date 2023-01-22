@@ -9,7 +9,7 @@
 
 {#if data.length > 0}
 	<div
-		class={`section flex w-full flex-col items-start justify-start px-10 py-10 ${className}`}
+		class={`section flex w-full flex-col items-start justify-start px-10 py-5 ${className}`}
 		id="services"
 	>
 		<SectionTitle title="My Services" />

@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class={`flex w-full scroll-m-24 flex-col items-center justify-start px-10 py-10 ${className}`}
+	class={`section flex w-full flex-col items-center justify-start px-10 py-5 ${className}`}
 	id="projects"
 >
 	<SectionTitle title="My Projects" />
@@ -18,5 +18,5 @@
 			<ProjectCard data={project} />
 		{/each}
 	</div>
-	<a href={'projects'} class="btn-outline btn-primary btn-lg btn mt-14 ">MORE PROJECTS</a>
+	<a href={'projects'} class="btn-outline btn-primary btn-lg btn mt-8 ">MORE PROJECTS</a>
 </div>
