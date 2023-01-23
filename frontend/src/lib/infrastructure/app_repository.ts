@@ -1,4 +1,4 @@
-import type { AppAssetModel, HomePageModel } from '../domain';
+import type { AppAssetModel, HomePageModel, WebsiteMetaTagModel } from '../domain';
 import { client } from './sanity_client';
 
 export const getHomeData = async (): Promise<HomePageModel> => {
@@ -63,8 +63,6 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 
 	const data = await client.fetch(query);
 
-	console.log('APPLOG :: AppRepository  :: getHomeData :: data : ', data);
-
 	const homeData: HomePageModel = data[0];
 
 	return homeData;
@@ -86,4 +84,19 @@ export const getAssets = async () => {
 	});
 
 	return assetMap;
+};
+
+export const getWebsiteData = async () => {
+	const query = `*[_type == "website"]
+		{
+			type,
+			label,
+			content
+		}`;
+
+	const data = await client.fetch(query);
+
+	const websiteData: WebsiteMetaTagModel[] = data;
+
+	return websiteData;
 };
