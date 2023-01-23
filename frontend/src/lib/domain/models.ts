@@ -69,3 +69,9 @@ export type HomePageModel = {
 	featuredProjects: ProjectModel[];
 	services: ServiceModel[];
 };
+
+export type WebsiteMetaTagModel = {
+	type: string;
+	label: string;
+	content: string;
+};

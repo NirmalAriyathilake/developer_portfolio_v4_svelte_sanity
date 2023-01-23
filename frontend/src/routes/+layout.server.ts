@@ -1,12 +1,16 @@
-import { getAssets } from '$lib/infrastructure';
+import { getAssets, getWebsiteData } from '$lib/infrastructure';
 
 import type { LayoutServerLoad } from './$types';
 
 export const load: LayoutServerLoad = async () => {
-	const data = await getAssets();
+	const assetData = await getAssets();
+	const websiteData = await getWebsiteData();
 
-	if (data) {
-		return data;
+	if (assetData && websiteData) {
+		return {
+			assetData: assetData,
+			websiteData: websiteData
+		};
 	}
 	return {
 		status: 500,
