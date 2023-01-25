@@ -13,7 +13,7 @@
 		id="services"
 	>
 		<SectionTitle title="My Services" />
-		<div class="flex flex-col gap-10 lg:flex-row">
+		<div class="flex w-full flex-col flex-wrap items-center justify-center gap-10 lg:flex-row">
 			{#each data as service}
 				<ServiceCard data={service} />
 			{/each}

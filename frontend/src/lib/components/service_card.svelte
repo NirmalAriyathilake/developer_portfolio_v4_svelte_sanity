@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class={`relative mt-20 flex flex-col items-center rounded-xl bg-base-200 shadow-lg ${className}`}
+	class={`relative mt-20 flex w-full flex-col items-center rounded-xl bg-base-200 shadow-lg md:w-4/5 lg:w-1/4 ${className}`}
 >
 	<img
 		src={`${data.iconUrl}?auto=format`}
