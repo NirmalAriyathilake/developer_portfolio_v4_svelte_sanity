@@ -14,7 +14,7 @@
 >
 	<SectionTitle title="About Me" />
 	<div class="flex flex-col items-center gap-10 lg:flex-row">
-		<div class="relative h-full w-full md:w-3/5 lg:w-1/4">
+		<div class="relative h-full w-full md:w-3/5 lg:w-1/4 xl:w-1/5">
 			<div class="absolute -top-4 -left-4 -z-10">
 				<DotsSvg />
 			</div>
