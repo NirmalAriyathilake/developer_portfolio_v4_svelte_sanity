@@ -6,7 +6,7 @@
 </script>
 
 <a
-	class={`flex flex-col items-center justify-center rounded-r-lg border-l-4 border-primary bg-base-200 p-5 shadow-lg lg:basis-1/3 ${className}`}
+	class={`flex flex-col items-center justify-center gap-5 rounded-r-lg border-l-4 border-primary bg-base-200 py-7 px-10 shadow-lg lg:basis-1/3 ${className}`}
 	href={data.action}
 	target="_blank"
 	rel="noreferrer"
@@ -16,5 +16,5 @@
 		alt={`${data.label} contact button`}
 		style="width: 48px;"
 	/>
-	<p class="mt-5 text-lg">{data.value}</p>
+	<p class="text-lg">{data.value}</p>
 </a>

@@ -5,7 +5,7 @@
 </script>
 
 <a
-	class="social-btn btn-link btn mb-2 no-underline hover:no-underline lg:mb-5"
+	class="social-btn btn-link btn mb-2 font-bold no-underline hover:no-underline lg:mb-5"
 	href={socialLink.action}
 	target="_blank"
 	rel="noreferrer"
