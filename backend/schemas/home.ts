@@ -139,6 +139,19 @@ export default {
       ],
     },
     {
+      name: 'workExperiences',
+      type: 'array',
+      title: 'Work Experiences',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'work_experience',
+          },
+        },
+      ],
+    },
+    {
       name: 'contacts',
       type: 'array',
       title: 'Contacts',
