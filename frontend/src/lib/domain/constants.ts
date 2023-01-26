@@ -14,6 +14,10 @@ export const homeNavBarItems: NavBarItemModel[] = [
 		link: '#projects'
 	},
 	{
+		label: 'My Work Experiences',
+		link: '#workExperiences'
+	},
+	{
 		label: 'Contact Me',
 		link: '#contact'
 	}

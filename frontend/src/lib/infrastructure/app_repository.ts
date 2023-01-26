@@ -52,6 +52,14 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 						},
 						"thumbnailUrl": thumbnail.asset->url
 					},
+				workExperiences[] ->
+					{
+						name,
+						designation,
+						from,
+						to,
+						"logoUrl": logo.asset->url
+					},
 				contacts[] ->
 					{
 						label,

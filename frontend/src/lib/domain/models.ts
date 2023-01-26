@@ -62,12 +62,22 @@ export type SocialLinkModel = {
 	value: string;
 };
 
+export type WorkExperienceModel = {
+	name: string;
+	designation: string;
+	from: string;
+	to: string;
+	location: string;
+	logoUrl: string;
+};
+
 export type HomePageModel = {
 	about: AboutSectionModel;
 	contacts: SocialLinkModel[];
 	intro: IntroSectionModel;
 	featuredProjects: ProjectModel[];
 	services: ServiceModel[];
+	workExperiences: WorkExperienceModel[];
 };
 
 export type WebsiteMetaTagModel = {

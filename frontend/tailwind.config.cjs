@@ -22,7 +22,7 @@ module.exports = {
 		themes: [
 			{
 				light: {
-					...require('daisyui/src/colors/themes')['[data-theme=bumblebee]'],
+					...require('daisyui/src/colors/themes')['[data-theme=light]'],
 					primary: '#FF7F2A',
 					'primary-content': '#131616',
 					'base-200': '#F6F2EE',
@@ -30,7 +30,7 @@ module.exports = {
 					'base-content': '#131616'
 				},
 				dark: {
-					...require('daisyui/src/colors/themes')['[data-theme=halloween]'],
+					...require('daisyui/src/colors/themes')['[data-theme=dark]'],
 					primary: '#FF7F2A'
 				}
 			}

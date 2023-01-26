@@ -14,8 +14,8 @@
 		class="absolute -top-20 w-40 rounded-xl"
 	/>
 	<div class="flex flex-col items-center px-5 py-5">
-		<div class="mb-2 mt-20 text-xl font-semibold">{data.label}</div>
-		<div class="mt-2 text-justify text-base">{data.description}</div>
+		<h2 class="mb-2 mt-20 text-xl font-semibold">{data.label}</h2>
+		<p class="mt-2 text-justify text-base">{data.description}</p>
 		<!-- <a
 			class="text-primary mt-5 self-end text-right text-lg font-semibold underline-offset-4 hover:underline "
 			href={data.seeMorePath}
