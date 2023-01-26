@@ -15,11 +15,11 @@
 }
 
 .section-title {
-	@apply relative;
+	@apply relative mb-10;
 }
 
 .section-title::before {
-	@apply absolute -bottom-2 left-0 h-1 w-2/5 rounded-lg bg-primary content-[""];
+	@apply absolute -bottom-3 left-0 h-1 w-2/5 rounded-lg bg-primary content-[""];
 }
 
 .social-btn {

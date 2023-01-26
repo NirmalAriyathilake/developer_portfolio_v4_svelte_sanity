@@ -7,6 +7,7 @@
 	import IntroSection from '$lib/sections/home/intro_section.svelte';
 	import ProjectsSection from '$lib/sections/home/projects_section.svelte';
 	import ServicesSection from '$lib/sections/home/services_section.svelte';
+	import WorkExperiencesSection from '$lib/sections/home/work_experiences_section.svelte';
 
 	export let data: HomePageModel;
 </script>
@@ -18,8 +19,15 @@
 <NavBarContainer navBarItems={homeNavBarItems} />
 <IntroSection data={data.intro} className="pt-24" />
 <AboutSection data={data.about} />
-<ServicesSection data={data.services} />
+{#if data.services.length > 0}
+	<ServicesSection data={data.services} />
+{/if}
 {#if data.featuredProjects.length > 0}
 	<ProjectsSection data={data.featuredProjects} />
 {/if}
-<ContactsSection data={data.contacts} />
+{#if data.workExperiences.length > 0}
+	<WorkExperiencesSection data={data.workExperiences} />
+{/if}
+{#if data.contacts.length > 0}
+	<ContactsSection data={data.contacts} />
+{/if}
