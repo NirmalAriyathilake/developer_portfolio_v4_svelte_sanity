@@ -8,11 +8,11 @@
 <div
 	class={`relative flex w-full flex-col items-center rounded-xl bg-base-200 shadow-lg md:w-4/5 lg:w-1/4 ${className}`}
 >
-	<div class="flex w-full items-center justify-center rounded-t-xl bg-white">
+	<div class="flex w-full items-center justify-center rounded-t-xl bg-base-100">
 		<img
 			src={`${data.logoUrl}?auto=format`}
 			alt={`${data.name}`}
-			class="h-36 w-72 bg-white object-contain py-2 px-5"
+			class="h-36 w-72 object-contain py-2 px-5"
 		/>
 	</div>
 	<div class="flex flex-col items-center gap-5 px-5 py-5">
