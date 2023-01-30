@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class={`flex flex-col-reverse items-center gap-5 rounded-r-lg rounded-l-none border-l-4 border-solid border-primary bg-base-200 px-8 py-5 shadow-lg lg:flex-row ${className}`}
+	class={`flex flex-col-reverse items-center gap-10 rounded-r-lg rounded-l-none border-l-4 border-solid border-primary bg-base-200 px-8 py-5 shadow-lg lg:flex-row ${className}`}
 >
 	<div
 		class="h-full w-full bg-contain bg-center bg-no-repeat"
@@ -42,10 +42,12 @@
 			</div>
 		</div>
 	</div>
-	<img
-		src={`${data.thumbnailUrl}?auto=format`}
-		alt="Screenshots of the project"
-		placeholder="blur"
-		class="w-72 lg:w-80"
-	/>
+	{#if data.thumbnailUrl != null && data.thumbnailUrl.length > 0}
+		<img
+			src={`${data.thumbnailUrl}?auto=format`}
+			alt="Screenshots of the project"
+			placeholder="blur"
+			class="w-72 lg:w-80"
+		/>
+	{/if}
 </div>

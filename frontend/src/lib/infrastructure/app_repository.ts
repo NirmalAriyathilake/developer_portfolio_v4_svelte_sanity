@@ -1,5 +1,28 @@
-import type { AppAssetModel, HomePageModel, WebsiteMetaTagModel } from '../domain';
+import type {
+	AppAssetModel,
+	HomePageModel,
+	ProjectsPageModel,
+	WebsiteMetaTagModel
+} from '../domain';
 import { client } from './sanity_client';
+
+const projectQuery = `{
+						title,
+						shortDescription,
+						description,
+						language,
+						links[]
+						{
+							type, 
+							url
+						},
+						points[]
+						{
+							label,
+							value
+						},
+						"thumbnailUrl": thumbnail.asset->url
+					}`;
 
 export const getHomeData = async (): Promise<HomePageModel> => {
 	const query = `*[_type == "home"]{
@@ -35,23 +58,7 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 						"iconUrl": icon.asset->url
 					},
 				featuredProjects[] ->
-					{
-						title,
-						shortDescription,
-						description,
-						language,
-						links[]
-						{
-							type, 
-							url
-						},
-						points[]
-						{
-							label,
-							value
-						},
-						"thumbnailUrl": thumbnail.asset->url
-					},
+					${projectQuery},
 				workExperiences[] ->
 					{
 						name,
@@ -70,6 +77,8 @@ export const getHomeData = async (): Promise<HomePageModel> => {
 				}`;
 
 	const data = await client.fetch(query);
+
+	console.log('APPLOG :: getHomeData :  data :', data);
 
 	const homeData: HomePageModel = data[0];
 
@@ -107,4 +116,24 @@ export const getWebsiteData = async () => {
 	const websiteData: WebsiteMetaTagModel[] = data;
 
 	return websiteData;
+};
+
+export const getProjectsData = async () => {
+	const query = `*[_type == 'projects']
+		{
+			mobileApps[] ->
+			${projectQuery},
+			webApps[] ->
+			${projectQuery},
+			packages[] ->
+			${projectQuery},
+			experiments[] ->
+			${projectQuery},		
+		}`;
+
+	const data = await client.fetch(query);
+
+	const projectsPageData: ProjectsPageModel = data[0];
+
+	return projectsPageData;
 };
