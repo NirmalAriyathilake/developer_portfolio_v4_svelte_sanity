@@ -85,3 +85,10 @@ export type WebsiteMetaTagModel = {
 	label: string;
 	content: string;
 };
+
+export type ProjectsPageModel = {
+	mobileApps: ProjectModel[];
+	webApps: ProjectModel[];
+	packages: ProjectModel[];
+	experiments: ProjectModel[];
+};

@@ -31,6 +31,15 @@ export default {
       name: 'language',
       type: 'string',
       title: 'Language',
+      options: {
+        list: [
+          {title: 'Android', value: 'Android'},
+          {title: 'Dart', value: 'Dart'},
+          {title: 'Flutter', value: 'Flutter'},
+          {title: 'NextJS', value: 'NextJS'},
+          {title: 'SvelteKit', value: 'SvelteKit'},
+        ],
+      },
     },
     {
       name: 'points',
@@ -66,6 +75,14 @@ export default {
               name: 'type',
               type: 'string',
               title: 'Type',
+              options: {
+                list: [
+                  {title: 'ButtonAppSite', value: 'ButtonAppSite'},
+                  {title: 'ButtonWebSite', value: 'ButtonWebSite'},
+                  {title: 'ButtonPlaystore', value: 'ButtonPlaystore'},
+                  {title: 'ButtonPub', value: 'ButtonPub'},
+                ],
+              },
             },
             {
               name: 'url',
