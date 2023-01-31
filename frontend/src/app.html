@@ -17,3 +17,9 @@
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
+
+<script lang="ts">
+	const storedValue = localStorage.getItem('theme');
+
+	document.documentElement.setAttribute('data-theme', storedValue == null ? 'system' : storedValue);
+</script>
