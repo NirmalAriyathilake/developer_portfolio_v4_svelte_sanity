@@ -5,24 +5,25 @@
 
 	const toggleDark = () => {
 		$theme = $theme === 'dark' ? 'light' : 'dark';
-		console.log('APPLOG : theme : ', $theme);
 	};
 
 	onMount(() => {
 		if (browser) {
-			const storageTheme = localStorage.getItem('theme');
+			// const storageTheme = localStorage.getItem('theme');
 
-			if (storageTheme === 'dark' || storageTheme === 'light') {
-				$theme = storageTheme;
-			} else {
-				let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-				$theme = isDark ? 'dark' : 'light';
-			}
+			// if (storageTheme === 'dark' || storageTheme === 'light') {
+			// 	$theme = storageTheme;
+			// }
+			// else {
+			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light';
+			$theme = systemTheme;
+			// }
 
 			let themeUnSub = theme.subscribe((value) => {
-				localStorage.setItem('theme', value);
 				document.documentElement.setAttribute('data-theme', value);
+				// localStorage.setItem('theme', value);
 			});
 
 			return () => {
