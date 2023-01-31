@@ -81,6 +81,7 @@ export default {
                   {title: 'ButtonWebSite', value: 'ButtonWebSite'},
                   {title: 'ButtonPlaystore', value: 'ButtonPlaystore'},
                   {title: 'ButtonPub', value: 'ButtonPub'},
+                  {title: 'ButtonGitHub', value: 'ButtonGitHub'},
                 ],
               },
             },
