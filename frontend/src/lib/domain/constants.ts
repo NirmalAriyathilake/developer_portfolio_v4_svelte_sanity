@@ -36,8 +36,8 @@ export const projectPageNavBarItems: NavBarItemModel[] = [
 		label: 'Packages',
 		link: '#packages'
 	},
-	// {
-	// 	label: 'Experiments',
-	// 	link: '#experiments'
-	// }
+	{
+		label: 'Experiments',
+		link: '#experiments'
+	}
 ];
