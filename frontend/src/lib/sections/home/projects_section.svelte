@@ -17,5 +17,5 @@
 			<ProjectCard data={project} />
 		{/each}
 	</div>
-	<a href={'projects'} class="btn-outline btn-primary btn-lg btn mt-8 ">MORE PROJECTS</a>
+	<a href={'projects'} class="btn-outline btn-primary btn-lg btn mt-8 ">SEE MORE</a>
 </div>
