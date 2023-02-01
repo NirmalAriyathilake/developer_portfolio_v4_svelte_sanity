@@ -12,7 +12,7 @@
 	<div class="flex flex-col items-center self-center px-10">
 		<div class="flex flex-col items-start">
 			<h1 class="text-5xl font-bold lg:text-9xl">
-				Hey<span class="text-primary">,</span>
+				Hi<span class="text-primary">,</span>
 			</h1>
 
 			<h2 class="dash-title mt-10 text-4xl font-bold lg:text-7xl">
