@@ -6,16 +6,16 @@
 </script>
 
 <div
-	class={`relative flex w-full flex-col items-center rounded-xl bg-base-200 shadow-lg md:w-4/5 lg:w-1/4 ${className}`}
+	class={`relative flex w-full flex-col items-center rounded-xl bg-base-200 px-5 py-5 shadow-lg md:w-4/5 lg:w-1/4 ${className}`}
 >
-	<div class="flex w-full items-center justify-center rounded-t-xl bg-base-100">
+	<div class="flex w-full items-center justify-center rounded-t-xl bg-base-200">
 		<img
 			src={`${data.logoUrl}?auto=format`}
 			alt={`${data.name}`}
-			class="h-36 w-72 object-contain py-2 px-5"
+			class="h-36 w-72 object-contain"
 		/>
 	</div>
-	<div class="flex flex-col items-center gap-5 px-5 py-5">
+	<div class="flex flex-col items-center gap-5">
 		<h2 class="text-xl font-semibold text-primary">{data.name}</h2>
 		<h3 class="text-justify text-base font-semibold">{data.designation}</h3>
 		<h4 class="font-normal">
