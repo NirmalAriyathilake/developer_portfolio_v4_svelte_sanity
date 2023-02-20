@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class={`relative flex w-full flex-col items-center rounded-xl bg-base-200 px-5 py-5 shadow-lg md:w-4/5 lg:w-1/4 ${className}`}
+	class={`relative flex w-full flex-col items-center rounded-xl bg-base-200 px-5 pt-5 pb-10 shadow-lg md:w-4/5 lg:w-1/4 ${className}`}
 >
 	<div class="flex w-full items-center justify-center rounded-t-xl bg-base-200">
 		<img
