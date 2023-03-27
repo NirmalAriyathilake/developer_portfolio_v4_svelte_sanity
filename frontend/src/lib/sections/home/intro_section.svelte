@@ -29,7 +29,7 @@
 		<a class="btn-outline btn-primary btn-lg btn" href={'#contact'}> Contact Me </a>
 		<a
 			class="btn-primary btn-lg btn flex lg:hidden"
-			href={`${data.cv}`}
+			href={data.cv}
 			download="Nirmal Ariyathilake CV"
 			type="application/pdf"
 		>
@@ -39,9 +39,11 @@
 		<!-- Desktop browser needs 'data:' in url to download files -->
 		<a
 			class="btn-primary btn-lg btn hidden lg:flex"
-			href={`data:${data.cv}`}
+			href={data.cv}
 			download="Nirmal Ariyathilake CV"
 			type="application/pdf"
+			target="_blank"
+			rel="noreferrer"
 		>
 			Download CV
 		</a>
