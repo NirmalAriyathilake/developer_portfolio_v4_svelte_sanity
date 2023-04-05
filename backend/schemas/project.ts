@@ -38,6 +38,7 @@ export default {
           {title: 'Flutter', value: 'Flutter'},
           {title: 'NextJS', value: 'NextJS'},
           {title: 'SvelteKit', value: 'SvelteKit'},
+          {title: 'Fresh', value: 'Fresh'},
         ],
       },
     },
